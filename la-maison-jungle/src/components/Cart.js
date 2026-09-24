@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Cart.css";
 
 
@@ -24,6 +24,10 @@ function Cart({cart, updateCart}) {
 			updateCart(cart.filter((plant) => plant.name !== name));
 		}
 	}
+
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`
+	}, [total])
 
 	return isOpen ? (
 		<div className="lmj-cart">
