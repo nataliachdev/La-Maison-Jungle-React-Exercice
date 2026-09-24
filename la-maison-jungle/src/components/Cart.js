@@ -6,7 +6,7 @@ function Cart({cart, updateCart}) {
 	const [isOpen, setIsOpen] = useState(false);
 	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price, 0
-	)
+	);
 
 	//Retirer un élément du panier
 	function removeFromCart(name) {
@@ -27,7 +27,7 @@ function Cart({cart, updateCart}) {
 
 	useEffect(() => {
 		document.title = `LMJ: ${total}€ d'achats`
-	}, [total])
+	}, [total]);
 
 	return isOpen ? (
 		<div className="lmj-cart">
